@@ -1,0 +1,8 @@
+## When to use
+Only create custom exception types if they need to be caught and handled differently from existing predefined .NET exceptions.
+
+E.g want to perform special monitoring of a specific critical exception type.
+
+If building a library/framework for use by other developers so consumers can react to errors in your library.
+
+Interfacing with external API, DLL, service.
