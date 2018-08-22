@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleCalculator
 {
@@ -10,7 +6,14 @@ namespace ConsoleCalculator
     {
         public int Calculate(int number1, int number2, string operation)
         {
-            if (operation == "/")
+            string nonNullOperation = operation ?? throw new ArgumentNullException(nameof(operation));
+
+            //if (operation is null)
+            //{
+            //    throw new ArgumentNullException(nameof(operation));
+            //}
+
+            if (nonNullOperation == "/")
             {
                 return Divide(number1, number2);
             }
