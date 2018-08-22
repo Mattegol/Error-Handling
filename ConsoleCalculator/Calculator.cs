@@ -22,7 +22,8 @@ namespace ConsoleCalculator
                 catch (DivideByZeroException ex)
                 {
                     //Log.Error(ex);
-                    throw;
+                    //throw;
+                    throw new ArithmeticException("An error occurred during calculation.", ex);
                 }
 
             }
