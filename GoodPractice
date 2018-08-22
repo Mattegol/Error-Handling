@@ -1,0 +1,33 @@
+# Exception Handling Good Practice
+
+## Do not add a catch block that does nothing or just rethrows.
+Catch block should add some value.
+
+May just be to log the error.
+
+Usually bad practice to ignore(swallow/trap) exceptions.
+
+## Do not use exceptions for normal program flow logic.
+E.g input validation
+  - You expect input to invalid sometimes
+  - Not an exceptional situation
+  - Part of expected logic flow
+  
+IsValid(xxx) method(s)
+
+## Design code to avoid exceptions
+int Parse(string input) could instead be bool TryParse(string input, out int result)
+
+Consider returning null (o null object pattern) for extremely common errors
+
+## Use correct grammar in exception messages
+Correct punctuation
+
+Correct spelling
+
+End sentences with full stop
+
+Consider error message localization
+
+
+
