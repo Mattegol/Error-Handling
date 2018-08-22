@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static System.Console;
 
 namespace ConsoleCalculator
@@ -21,8 +17,16 @@ namespace ConsoleCalculator
             string operation = ReadLine().ToUpperInvariant();
 
             var calculator = new Calculator();
-            int result = calculator.Calculate(number1, number2, operation);
-            DisplayResult(result);
+
+            try
+            {
+                int result = calculator.Calculate(number1, number2, operation);
+                DisplayResult(result);
+            }
+            catch (Exception ex)
+            {
+                WriteLine($"Sorry, something went wrong. {ex}");
+            }
 
             WriteLine("\nPress enter to exit.");
             ReadLine();
