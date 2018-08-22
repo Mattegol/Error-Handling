@@ -37,6 +37,10 @@ namespace ConsoleCalculator
             {
                 WriteLine($"Sorry, something went wrong. {ex}");
             }
+            finally
+            {
+                WriteLine(".....finally.....");
+            }
 
             WriteLine("\nPress enter to exit.");
             ReadLine();
