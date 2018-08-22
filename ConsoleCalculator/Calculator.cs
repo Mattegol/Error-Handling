@@ -15,7 +15,16 @@ namespace ConsoleCalculator
 
             if (nonNullOperation == "/")
             {
-                return Divide(number1, number2);
+                try
+                {
+                    return Divide(number1, number2);
+                }
+                catch (DivideByZeroException ex)
+                {
+                    //Log.Error(ex);
+                    throw;
+                }
+
             }
 
             throw new ArgumentOutOfRangeException(nameof(operation), "The mathematical operator is not supported.");
