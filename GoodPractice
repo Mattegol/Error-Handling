@@ -29,5 +29,10 @@ End sentences with full stop
 
 Consider error message localization
 
+## Use finally blocks for cleanup
+E.g. calling Dispose()
+
+Callers of method should be able to assume no unexpected side effects when exception thrown/caught
+
 
 
