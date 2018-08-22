@@ -20,8 +20,18 @@ namespace ConsoleCalculator
 
             try
             {
-                int result = calculator.Calculate(number1, number2, null); // inserted null as argument here for testing purpose.
+                int result = calculator.Calculate(number1, number2, operation);
                 DisplayResult(result);
+            }
+            catch (ArgumentNullException ex)
+            {
+                //Log.Error(ex)
+                WriteLine($"Operation was not provided. {ex}");
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                //Log.Error(ex)
+                WriteLine($"Operation is not supported. {ex}");
             }
             catch (Exception ex)
             {
